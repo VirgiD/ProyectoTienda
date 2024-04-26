@@ -19,7 +19,7 @@ public class CompraProductoPK {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id_compra")
+    @Column(name="Id_compra")
     private Integer idCompra;
 
     @ManyToOne

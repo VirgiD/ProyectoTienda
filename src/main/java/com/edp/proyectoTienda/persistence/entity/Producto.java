@@ -24,7 +24,7 @@ public class Producto {
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    @Column(name="Id-productos")
+    @Column(name="id-productos")
     private Integer id_producto;
 
     private String name;
@@ -33,7 +33,7 @@ public class Producto {
     @JoinColumn(name="id_categoria")
     private Categoria categoria;
 
-    @Column(name = "id_categoria")
+    @Column(name="codigo_barras")
     private String CodigoDeBarras;
 
     @Column(name="precio_venta")

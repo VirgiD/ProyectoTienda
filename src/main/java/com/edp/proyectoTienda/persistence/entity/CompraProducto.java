@@ -2,6 +2,7 @@ package com.edp.proyectoTienda.persistence.entity;
 
 
 import jakarta.persistence.Column;
+import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -14,7 +15,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 
 
 @Entity
@@ -24,26 +25,27 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Table(name="compra_producto")
 public class CompraProducto {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="Id-compras-productos")
 
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id_compra")
     private Integer idCompra;
 
-    private LocalDateTime fecha;;
+    @ManyToOne
+    @JoinColumn(name = "id_cliente")
+    private Clientes clientes;
 
-    private Double modo_pago;
+    private Date fecha;
+
+    private String cliente;
 
     private String comentario;
 
-    private Integer estado;
+    private String estado;
 
-    @ManyToOne
-    @JoinColumn(name = "id_compra")
-    private CompraProductoPK compra;
 
-    @ManyToOne
-    @JoinColumn(name = "id_producto")
-    private Producto producto;
+
+
 
 }

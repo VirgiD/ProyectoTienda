@@ -11,6 +11,8 @@ import jakarta.persistence.ManyToOne;
 import lombok.Getter;
 import lombok.Setter;
 
+
+
 @Entity
 @Getter
 @Setter
@@ -18,13 +20,19 @@ import lombok.Setter;
 public class CompraProductoPK {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="Id_compra")
-    private Integer idCompra;
-
     @ManyToOne
-    @JoinColumn(name = "id_cliente")
-    private Clientes clientes;
+    @JoinColumn(name = "idCompra")
+    private CompraProducto compraProducto;
+
+    @Id
+    @ManyToOne
+    @JoinColumn(name = "id_producto")
+    private Producto producto;
+
+    private Integer cantidad;
+    private Double total;
+    private Integer estado;
+
 
 
 }

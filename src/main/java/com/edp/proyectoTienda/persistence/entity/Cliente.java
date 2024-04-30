@@ -12,11 +12,12 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
+@Table(name="clientes")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name="clientes")
+
 public class Cliente {
 
    @Id

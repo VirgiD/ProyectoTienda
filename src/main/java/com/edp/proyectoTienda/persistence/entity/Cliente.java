@@ -19,11 +19,10 @@ import lombok.Setter;
 @AllArgsConstructor
 
 public class Cliente {
-
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)
    @Column(name = "id_cliente")
-   private String idCliente;
+   private Integer idCliente;
 
    private String nombre;
 

@@ -3,37 +3,26 @@ package com.edp.proyectoTienda.persistence.entity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.io.Serializable;
 
 
-@Entity
+
 @Getter
 @Setter
 @Embeddable
-public class CompraProductoPK {
+public class CompraProductoPK implements Serializable {
 
-    @Id
-    @ManyToOne
-    @JoinColumn(name="idCompra")
-    private CompraProducto compraProducto;
+    @Column(name = "id_compra")
+    private Integer idCompra;
 
-    @Id
-    @ManyToOne
-    @JoinColumn(name="id_producto")
-    private Producto producto;
+    @Column(name = "id_producto")
+    private Integer idProducto;
 
-    private Integer cantidad;
 
-    private Double total;
-
-    private Integer estado;
 
 
 

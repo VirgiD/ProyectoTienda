@@ -24,22 +24,22 @@ public class Producto {
 
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column(name="id_productos")
+    @Column(name = "id_productos", insertable = false)
     private Integer id_producto;
 
     private String name;
 
     @ManyToOne
-    @JoinColumn(name="id_categoria")
+    @JoinColumn(name = "id_categoria", insertable = false, updatable = false)
     private Categoria categoria;
 
-    @Column(name="codigo_barras")
+    @Column(name = "codigo_barras")
     private String CodigoDeBarras;
 
-    @Column(name="precio_venta")
+    @Column(name = "precio_venta")
     private Integer precioDeVenta;
 
-    @Column(name="cantidad_stock")
+    @Column(name = "cantidad_stock")
 
     private Boolean estado;
 

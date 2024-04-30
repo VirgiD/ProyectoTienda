@@ -21,16 +21,18 @@ public class CompraProductoPK {
 
     @Id
     @ManyToOne
-    @JoinColumn(name = "idCompra")
+    @JoinColumn(name="idCompra")
     private CompraProducto compraProducto;
 
     @Id
     @ManyToOne
-    @JoinColumn(name = "id_producto")
+    @JoinColumn(name="id_producto")
     private Producto producto;
 
     private Integer cantidad;
+
     private Double total;
+
     private Integer estado;
 
 

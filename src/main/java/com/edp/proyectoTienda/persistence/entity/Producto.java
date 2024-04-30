@@ -23,7 +23,7 @@ import lombok.Setter;
 public class Producto {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name="id_productos")
     private Integer id_producto;
 

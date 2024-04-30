@@ -2,7 +2,6 @@ package com.edp.proyectoTienda.persistence.entity;
 
 
 import jakarta.persistence.Column;
-import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -28,13 +27,13 @@ public class CompraProducto {
 
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name="id_compra")
     private Integer idCompra;
 
     @ManyToOne
-    @JoinColumn(name = "id_cliente")
-    private Clientes clientes;
+    @JoinColumn(name="id_cliente")
+    private Cliente clientes;
 
     private Date fecha;
 

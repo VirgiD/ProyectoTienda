@@ -17,7 +17,7 @@ import java.util.Date;
 @Getter
 @Setter
 
-@Table(name = "compra_producto")
+@Table(name = "compras_productos")
 public class CompraProducto {
 
     @EmbeddedId

@@ -25,5 +25,5 @@ public class Categoria {
     private Integer idCategoria;
 
     @OneToMany(mappedBy = "categoria")
-    private List<Producto> producto;
+    private List<Producto>productos;
 }

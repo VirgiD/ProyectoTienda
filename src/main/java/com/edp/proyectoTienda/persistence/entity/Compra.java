@@ -7,15 +7,21 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
 @Table(name = "compras")
+@Getter
+@Setter
+@AllArgsConstructor
 public class Compra {
 
     @Id
@@ -27,12 +33,18 @@ public class Compra {
 
     private LocalDateTime fecha;
 
-    private String medioPago;
+    private String medio_pago;
 
     private String comentario;
 
+    private Boolean estado;
+
     @OneToMany(mappedBy = "compra")
-    private List<CompraProducto> producto;
+    private List<CompraProducto>productos;
+
+    @ManyToOne
+    @JoinColumn(name = "id_cliente", insertable = false, updatable = false)
+    private Cliente cliente;
 
 
 }

@@ -1,5 +1,5 @@
 package com.edp.proyectoTienda.persistence;
-import com.edp.proyectoTienda.domain.repository.CompraCrudRepository;
+import com.edp.proyectoTienda.persistence.crud.CompraCrudRepository;
 import com.edp.proyectoTienda.persistence.entity.Cliente;
 import com.edp.proyectoTienda.persistence.entity.Compra;
 

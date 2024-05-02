@@ -1,4 +1,4 @@
-package com.edp.proyectoTienda.domain.repository;
+package com.edp.proyectoTienda.persistence.crud;
 
 import com.edp.proyectoTienda.persistence.entity.Cliente;
 import com.edp.proyectoTienda.persistence.entity.Compra;

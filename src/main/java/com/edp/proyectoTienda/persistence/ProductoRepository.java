@@ -1,6 +1,6 @@
 package com.edp.proyectoTienda.persistence;
 
-import com.edp.proyectoTienda.domain.repository.ProductoCrudRepository;
+import com.edp.proyectoTienda.persistence.crud.ProductoCrudRepository;
 import com.edp.proyectoTienda.persistence.entity.Producto;
 
 import java.util.List;

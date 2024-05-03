@@ -11,7 +11,7 @@ public interface CompraCrudRepository extends CrudRepository<Compra, Integer> {
 
     List<CompraProducto>findByProductos(int id);
 
-    List<Cliente>findByCliente(int id);
+    List<Cliente>findById_cliente(int id);
 
 
 }

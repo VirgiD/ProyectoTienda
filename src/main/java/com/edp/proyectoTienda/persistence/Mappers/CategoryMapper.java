@@ -13,7 +13,7 @@ public interface CategoryMapper  {
 
     @Mappings({
             @Mapping(source = "idCategoria", target = "categoriId"),
-            @Mapping(source = "estadi", target = "state"),
+            @Mapping(source = "estado", target = "state"),
             @Mapping(source = "descripcion", target = "description")
     })
     Category toCategory(Categoria categoria);

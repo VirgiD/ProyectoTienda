@@ -15,13 +15,19 @@ public class ProductoRepository {
 
     }
 
-    public Producto createProducto(Producto producto){
-        return productoCrudRepository.save(producto);
+    public List<Producto>getByCategoria(int idCategoria){
+        return (List<Producto>)productoCrudRepository.findByIdCategoriaOrderByNombreAsc(idCategoria);
     }
+    public List<Producto> stockBajo(int cantidad){
+        return (List<Producto>) productoCrudRepository.findByCantidadStockLesThan(cantidad);
+    }
+
 
     public void deleteProducto(int id){
         productoCrudRepository.deleteById(id);
     }
-
+    public Producto createProducto(Producto producto){
+        return productoCrudRepository.save(producto);
+    }
 
 }

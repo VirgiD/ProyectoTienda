@@ -30,14 +30,16 @@ public class Producto {
     @Column(name = "id_producto", insertable = false)
     private Integer id_producto;
 
-    private String name;
+    private String nombre;
+
+    private int categoryId;
 
     @ManyToOne
     @JoinColumn(name = "id_categoria", insertable = false, updatable = false)
     private Categoria categoria;
 
     @Column(name = "codigo_barras")
-    private String CodigoDeBarras;
+    private String codigoBarras;
 
     @Column(name = "precio_venta")
     private Integer precioDeVenta;

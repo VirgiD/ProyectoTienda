@@ -9,10 +9,11 @@ import org.mapstruct.Mappings;
 
 import java.util.List;
 
-@Mapper(componentModel = "spring", uses = {CategoryMapper.class})
+@Mapper(componentModel = "spring", uses = {ProductMapper.class})
 public interface ProductMapper {
+
     @Mappings({
-            @Mapping(source = "idProducto", target = "productId"),
+            @Mapping(source = "id_producto", target = "productId"),
             @Mapping(source = "nombre", target = "name"),
             @Mapping(source = "idCategoria", target = "categoryId"),
             @Mapping(source = "categoria", target = "category"),
@@ -24,7 +25,7 @@ public interface ProductMapper {
 
     @InheritInverseConfiguration
     @Mappings({
-            @Mapping(target = "codigoBarra", ignore = true),
+            @Mapping(target = "codigoBarras", ignore = true),
             @Mapping(target = "cantidadStock", ignore = true)
     })
     Producto producto(Product product);

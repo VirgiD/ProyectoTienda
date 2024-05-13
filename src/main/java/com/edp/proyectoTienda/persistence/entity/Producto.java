@@ -32,7 +32,7 @@ public class Producto {
 
     private String nombre;
 
-    private int categoryId;
+    private int idCategoria;
 
     @ManyToOne
     @JoinColumn(name = "id_categoria", insertable = false, updatable = false)

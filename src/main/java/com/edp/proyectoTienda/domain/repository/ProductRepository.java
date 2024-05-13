@@ -4,18 +4,19 @@ import com.edp.proyectoTienda.domain.Product;
 
 
 import java.util.List;
+import java.util.Optional;
 
 public interface ProductRepository {
 
     List<Product> getAll();
 
-    List<Product> getByCategory(int category);
+    Optional<List<Product>> getByCategory(int category);
 
     void createProduct(Product product);
 
     void deleteById(int id);
 
-    List<Product>getScarseProduct(int productId);
+    List<Product>getScarseProduct(int quantity);
 
     Product save (Product product);
 

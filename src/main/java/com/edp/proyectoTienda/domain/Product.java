@@ -9,11 +9,13 @@ import lombok.Setter;
 @Setter
 public class Product {
 
-    private int productID;
+    private int productId;
 
     private String name;
 
     private int categoryId;
+
+    private int stock;
 
     private Category category;
 

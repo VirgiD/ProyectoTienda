@@ -1,18 +1,25 @@
 package com.edp.proyectoTienda.persistence;
 
+import com.edp.proyectoTienda.domain.Customer;
+import com.edp.proyectoTienda.domain.repository.CustomerRepository;
+import com.edp.proyectoTienda.persistence.Mappers.CustomerMapper;
+import com.edp.proyectoTienda.persistence.crud.ClienteCrudRepository;
 import com.edp.proyectoTienda.persistence.entity.Cliente;
+import com.edp.proyectoTienda.persistence.entity.Compra;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository
-public class ClienteRepository {
+public class ClienteRepository implements CustomerRepository {
 
-    private ClienteRepository clienteRepository;
+    private ClienteCrudRepository clienteCrudRepository;
+    private CustomerMapper mapper;
 
-    public List<Cliente>getAll(){
-        return (List<Cliente>) clienteRepository.getAll();
+
+    @Override
+    public List<Customer> getAllCustomer() {
+        List<Cliente> clientes = (List<Cliente>) clienteCrudRepository.findAll();
+        return mapper.toCustomers(clientes);
     }
-
-
 }

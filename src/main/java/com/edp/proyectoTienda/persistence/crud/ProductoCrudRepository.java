@@ -1,5 +1,6 @@
 package com.edp.proyectoTienda.persistence.crud;
 
+import com.edp.proyectoTienda.persistence.entity.Categoria;
 import com.edp.proyectoTienda.persistence.entity.Producto;
 import org.springframework.data.repository.CrudRepository;
 
@@ -7,9 +8,12 @@ import java.util.List;
 
 public interface ProductoCrudRepository extends CrudRepository<Producto, Integer> {
 
-    List<Producto>findByCategoria(int id);
+    List<Producto>findByIdCategoria(int id);
 
-    List<Producto>findByCantidadStockLesThan(int cantidad);
+  List<Producto>findByCantidadStockLessThan(int cantidad);
 
-    List<Producto> findByIdCategoriaOrderByNombreAsc(int idCategoria);
+
+    List<Producto> findByIdCategoriaOrderByNombreAsc(int categoryId);
+
+
 }

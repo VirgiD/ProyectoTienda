@@ -8,11 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping ("/inicio")
 public class TiendaController {
 
-    @GetMapping ("/holamundo")
-    public String HolaMundo(){
-     return "hola mundo";
 
-    }
 
     @GetMapping ("")
     public String getInit(){

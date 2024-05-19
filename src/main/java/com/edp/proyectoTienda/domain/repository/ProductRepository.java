@@ -8,15 +8,12 @@ import java.util.Optional;
 
 public interface ProductRepository {
 
-    List<Product> getAll();
+    List<Product> getAllProduct();
 
-    Optional<List<Product>> getByCategory(int category);
-
-    void createProduct(Product product);
+    List<Product> findByCategory(int categoryId);
 
     void deleteById(int id);
-
-    List<Product>getScarseProduct(int quantity);
+   List<Product>getScarseProduct(int productId);
 
     Product save (Product product);
 

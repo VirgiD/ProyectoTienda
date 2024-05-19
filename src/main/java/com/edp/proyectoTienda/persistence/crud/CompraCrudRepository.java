@@ -9,9 +9,8 @@ import java.util.List;
 
 public interface CompraCrudRepository extends CrudRepository<Compra, Integer> {
 
-    List<CompraProducto>findByProductos(int id);
 
-    List<Cliente>findById_cliente(int id);
+    List<Compra> findByMedioPago(String medioPago);
 
 
 }

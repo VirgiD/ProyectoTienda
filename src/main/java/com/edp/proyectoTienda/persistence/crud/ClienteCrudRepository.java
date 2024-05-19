@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface ClienteCrudRepository extends CrudRepository<Cliente, Integer> {
 
-        List<Cliente> findByLastnameAndFirstname(String name);
+        List<Cliente> findByApellidoAndNombre(String apellido, String nombre);
 
 }

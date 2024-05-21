@@ -39,8 +39,9 @@ public class ProductoRepository implements ProductRepository {
         productoCrudRepository.deleteById(id);
     }
 
+
     @Override
-    public List<Product> getScarseProduct(int productId) {
+    public List<Product> getScarceProduct(int productId) {
         List<Producto> productos = (List<Producto>) productoCrudRepository.findByCantidadStockLessThan(productId);
         return mapper.toProducts(productos);
     }

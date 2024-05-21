@@ -1,11 +1,7 @@
 package com.edp.proyectoTienda.domain;
 
-import com.edp.proyectoTienda.persistence.entity.Producto;
-import jakarta.persistence.EmbeddedId;
 
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.MapsId;
+import jakarta.persistence.EmbeddedId;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -14,6 +10,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 public class PurchaseProduct {
+
     @EmbeddedId
     private PurchaseProductPK id;
 
@@ -26,6 +23,18 @@ public class PurchaseProduct {
     private Product product;
 
     private Purchase purchase;
+
+    public PurchaseProduct() {
+    }
+
+    public PurchaseProduct(PurchaseProductPK id, int quantity, int total, boolean state, Product product, Purchase purchase) {
+        this.id = id;
+        this.quantity = quantity;
+        this.total = total;
+        this.state = state;
+        this.product = product;
+        this.purchase = purchase;
+    }
 
     public PurchaseProductPK getId() {
         return id;

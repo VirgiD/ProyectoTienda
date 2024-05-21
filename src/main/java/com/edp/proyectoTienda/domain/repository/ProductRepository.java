@@ -1,6 +1,7 @@
 package com.edp.proyectoTienda.domain.repository;
 
 import com.edp.proyectoTienda.domain.Product;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 
 import java.util.List;
@@ -13,7 +14,7 @@ public interface ProductRepository {
     List<Product> findByCategory(int categoryId);
 
     void deleteById(int id);
-   List<Product>getScarseProduct(int productId);
+   List<Product>getScarceProduct(int productId);
 
     Product save (Product product);
 

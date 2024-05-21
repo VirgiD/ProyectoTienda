@@ -7,6 +7,9 @@ import java.util.List;
 public interface PurchaseRespository {
     List<Purchase> getAllPurchase();
     Purchase save(Purchase purchase);
-    void deleteById(int id);
+
+
+    Purchase deleteByIdPurchase(int id);
+
     List<Purchase> findByPaymentsMethod(String paymentMethod);
 }

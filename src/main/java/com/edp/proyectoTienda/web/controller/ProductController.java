@@ -31,8 +31,8 @@ return productService.getAllProduct();
     }
 
     @GetMapping("/products/{id}")
-    public ResponseEntity<List<Product>> getScareProduct(@PathVariable("id") int idProduct){
-        List<Product> products =  productService.getScareStock(idProduct);
+    public ResponseEntity<List<Product>> getScarceProduct(@PathVariable("id") int idProduct){
+        List<Product> products =  productService.getScarceStock(idProduct);
         if(products.size() > 0){
             return new ResponseEntity<>(products,HttpStatus.OK);
         }else{

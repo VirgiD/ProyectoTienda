@@ -1,6 +1,7 @@
 package com.edp.proyectoTienda.domain.service;
 
 
+
 import com.edp.proyectoTienda.domain.Purchase;
 import com.edp.proyectoTienda.domain.repository.PurchaseRespository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,4 +16,12 @@ public class PurchaseService {
     public List<Purchase> getAll() {
         return purchaseRespository.getAllPurchase();
     }
+    public Purchase save(Purchase purchase) {
+        return purchaseRespository.save(purchase);
+    }
+
+    public Purchase deleteById(int id) {
+       return purchaseRespository.deleteByIdPurchase(id);
+    }
+
 }

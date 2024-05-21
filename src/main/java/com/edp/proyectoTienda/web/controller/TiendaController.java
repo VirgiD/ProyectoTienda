@@ -14,4 +14,5 @@ public class TiendaController {
     public String getInit(){
     return "Inicio";
     }
+
 }

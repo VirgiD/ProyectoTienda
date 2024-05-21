@@ -20,8 +20,8 @@ public class ProductService {
         return productRepository.findByCategory(categoryId);
     }
 
-    public List<Product> getScareStock(int idProduct){
-        return productRepository.getScarseProduct(idProduct);
+    public List<Product> getScarceStock(int idProduct){
+        return productRepository.getScarceProduct(idProduct);
     }
 
     public Product save(Product product) {

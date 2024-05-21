@@ -4,18 +4,12 @@ import com.edp.proyectoTienda.domain.Purchase;
 import com.edp.proyectoTienda.domain.repository.PurchaseRespository;
 import com.edp.proyectoTienda.persistence.Mappers.PurchaseMapper;
 import com.edp.proyectoTienda.persistence.crud.CompraCrudRepository;
-import com.edp.proyectoTienda.persistence.entity.Cliente;
 import com.edp.proyectoTienda.persistence.entity.Compra;
-import com.edp.proyectoTienda.persistence.entity.CompraProducto;
-import com.edp.proyectoTienda.persistence.entity.Producto;
-import lombok.NoArgsConstructor;
-import org.mapstruct.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 
 import java.util.List;
-import java.util.Optional;
 
 
 @Repository
@@ -38,8 +32,9 @@ public class CompraRepository implements PurchaseRespository {
     }
 
     @Override
-    public void deleteById(int id) {
+    public Purchase deleteByIdPurchase(int id) {
         compraCrudRepository.deleteById(id);
+        return null;
     }
 
     @Override

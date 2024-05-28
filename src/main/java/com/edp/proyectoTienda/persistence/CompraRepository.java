@@ -21,7 +21,7 @@ public class CompraRepository implements PurchaseRespository {
 
 
     @Override
-    public List<Purchase> getAllPurchase() {
+    public List<Purchase> getAll() {
         return mapper.toPurchases((List<Compra>) compraCrudRepository.findAll());
     }
 
@@ -32,9 +32,9 @@ public class CompraRepository implements PurchaseRespository {
     }
 
     @Override
-    public Purchase deleteByIdPurchase(int id) {
+    public void deleteByIdPurchase(int id) {
         compraCrudRepository.deleteById(id);
-        return null;
+
     }
 
     @Override

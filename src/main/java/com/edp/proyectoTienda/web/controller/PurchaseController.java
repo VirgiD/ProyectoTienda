@@ -16,25 +16,25 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("")
+@RequestMapping("api/compra")
 public class PurchaseController {
     @Autowired
     private PurchaseService purchaseService;
 
     @GetMapping("/purchase/all")
     public List<Purchase> getAll(){
+
         return purchaseService.getAll();
     }
-/*
-    @DeleteMapping(value = "/{id}")
-    public ResponseEntity<String> deleteByIdPurchase(@PathVariable int id) {
-
-    }*/
 
     @PostMapping("/add/compra")
     public Purchase save(@RequestBody Purchase purchase){
         return purchaseService.save(purchase);
     }
 
-
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<Void> deleteById(@PathVariable int id) {
+        purchaseService.deleteById(id);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
 }

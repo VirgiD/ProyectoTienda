@@ -1,8 +1,6 @@
 package com.edp.proyectoTienda.persistence.Mappers;
 import com.edp.proyectoTienda.domain.Purchase;
-import com.edp.proyectoTienda.domain.PurchaseProduct;
 import com.edp.proyectoTienda.persistence.entity.Compra;
-import com.edp.proyectoTienda.persistence.entity.CompraProducto;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;

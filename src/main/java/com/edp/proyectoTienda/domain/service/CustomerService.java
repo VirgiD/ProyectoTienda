@@ -1,13 +1,14 @@
 package com.edp.proyectoTienda.domain.service;
 
 import com.edp.proyectoTienda.domain.Customer;
+import com.edp.proyectoTienda.domain.Purchase;
 import com.edp.proyectoTienda.domain.repository.CustomerRepository;
-import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-
+@Service
 public class CustomerService {
     @Autowired
     private CustomerRepository customerRepository;
@@ -19,12 +20,14 @@ public class CustomerService {
     public void deleteCustomer(int id) {
         customerRepository.deleteByIdCustomer(id);
     }
-    public Customer getCustomerById(int id) {
-        Optional<Customer> customerOptional = customerRepository.findById(id);
-        if (customerOptional.isPresent()) {
-            return customerOptional.get();
-        } else {
-            throw new EntityNotFoundException("Cliente con id " + id + " no encontrado.");
-        }
+
+    public Customer save (Customer customer){
+        return customerRepository.save(customer);
     }
+
+    public Optional<Customer> findById(int id){
+         return customerRepository.findById(id);
+    }
+
+
 }

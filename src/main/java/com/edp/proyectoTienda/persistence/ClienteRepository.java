@@ -5,7 +5,7 @@ import com.edp.proyectoTienda.domain.repository.CustomerRepository;
 import com.edp.proyectoTienda.persistence.Mappers.CustomerMapper;
 import com.edp.proyectoTienda.persistence.crud.ClienteCrudRepository;
 import com.edp.proyectoTienda.persistence.entity.Cliente;
-import jakarta.persistence.EntityNotFoundException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -16,7 +16,11 @@ public class ClienteRepository implements CustomerRepository {
 
     private ClienteCrudRepository clienteCrudRepository;
     private CustomerMapper mapper;
-
+    @Autowired
+    public ClienteRepository(ClienteCrudRepository clienteCrudRepository, CustomerMapper mapper) {
+        this.clienteCrudRepository = clienteCrudRepository;
+        this.mapper = mapper;
+    }
 
     @Override
     public List<Customer> getAllCustomer() {
@@ -29,18 +33,7 @@ public class ClienteRepository implements CustomerRepository {
         clienteCrudRepository.deleteById(id);
     }
 
-    @Override
-    public Customer getCustomerById(int id) {
-        Optional<Customer> customerOptional = findById(id);
-        if (customerOptional.isPresent()) {
-            return customerOptional.get();
-        } else {
-            throw new EntityNotFoundException("Cliente con" + id + " no encontrado.");
-        }
 
-
-
-    }
 
     @Override
     public Customer save(Customer customer) {

@@ -8,8 +8,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping ("/inicio")
 public class TiendaController {
 
-
-
     @GetMapping ("")
     public String getInit(){
     return "Inicio";

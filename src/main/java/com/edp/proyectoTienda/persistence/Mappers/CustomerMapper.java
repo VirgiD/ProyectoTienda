@@ -1,9 +1,7 @@
 package com.edp.proyectoTienda.persistence.Mappers;
 
 import com.edp.proyectoTienda.domain.Customer;
-import com.edp.proyectoTienda.domain.Purchase;
 import com.edp.proyectoTienda.persistence.entity.Cliente;
-import com.edp.proyectoTienda.persistence.entity.Compra;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;

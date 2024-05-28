@@ -10,7 +10,7 @@ public interface CustomerRepository {
 
     List<Customer> getAllCustomer();
     void deleteByIdCustomer(int id);
-    Customer getCustomerById(int id);
+
     Customer save (Customer customer);
     Optional<Customer> findById(int id);
 }

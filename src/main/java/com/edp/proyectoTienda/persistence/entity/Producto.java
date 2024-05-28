@@ -53,6 +53,9 @@ public class Producto {
     private List<CompraProducto> productos;
 
 
+
+
+
     public Integer getIdProducto() {
         return idProducto;
     }

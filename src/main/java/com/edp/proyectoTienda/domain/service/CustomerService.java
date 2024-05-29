@@ -1,7 +1,6 @@
 package com.edp.proyectoTienda.domain.service;
 
 import com.edp.proyectoTienda.domain.Customer;
-import com.edp.proyectoTienda.domain.Purchase;
 import com.edp.proyectoTienda.domain.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,8 +16,15 @@ public class CustomerService {
          return customerRepository.getAllCustomer();
      }
 
-    public void deleteCustomer(int id) {
-        customerRepository.deleteByIdCustomer(id);
+    public boolean deleteByIdCustomer(int id) {  customerRepository.deleteByIdCustomer(id);
+
+        try {
+            customerRepository.deleteByIdCustomer(id);
+            return true; // Devuelve true si la eliminación fue exitosa
+        } catch (Exception e) {
+            // cliente no encontrado)
+            return false; // Devuelve false si la eliminación falló
+        }
     }
 
     public Customer save (Customer customer){

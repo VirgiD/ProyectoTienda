@@ -16,6 +16,8 @@ public interface ProductRepository {
     void deleteById(int id);
    List<Product>getScarceProduct(int productId);
 
+   void deleteByIdProduct(int id);
+
     Product save (Product product);
 
 

@@ -37,10 +37,14 @@ public class CategoryController {
 
 
     @DeleteMapping("/{id}")
-    public void deleteById(@PathVariable int id) {
-        categoryService.deleteById(id);
+    public ResponseEntity<Void> deleteById(@PathVariable int id) {
+        boolean isDeleted = categoryService.deleteById(id);
+        if (isDeleted) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
     }
-
 
 
 

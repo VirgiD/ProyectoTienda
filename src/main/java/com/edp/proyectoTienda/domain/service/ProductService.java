@@ -27,4 +27,14 @@ public class ProductService {
     public Product save(Product product) {
         return productRepository.save(product);
     }
+
+    public boolean deleteByIdProduct(int idProduct){
+        try {
+            productRepository.deleteByIdProduct(idProduct);
+            return true; // Devuelve true si la eliminación fue exitosa
+        } catch (Exception e) {
+            // producto no encontrado)
+            return false; // Devuelve false si la eliminación falló
+        }
+    }
 }

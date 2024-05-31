@@ -46,8 +46,8 @@ return productService.getAllProduct();
         return new ResponseEntity<>(savedProduct, HttpStatus.CREATED);
     }
 
-@DeleteMapping("/product/{id}")
-public ResponseEntity<Void> deleteById(@PathVariable("id") int idProduct) {
+    @DeleteMapping("/product/{id}")
+    public ResponseEntity<Void> deleteById(@PathVariable("id") int idProduct) {
     boolean isDeleted = productService.deleteByIdProduct(idProduct);
     if (isDeleted) {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);

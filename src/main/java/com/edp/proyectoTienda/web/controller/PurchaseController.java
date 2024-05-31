@@ -33,7 +33,7 @@ public class PurchaseController {
     }
 
 
-@PostMapping("/add/compra")
+    @PostMapping("/add/compra")
     public Purchase save(@RequestBody Purchase purchase){
         return purchaseService.save(purchase);
     }

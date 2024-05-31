@@ -1,11 +1,9 @@
 package com.edp.proyectoTienda.web.controller;
 
 import com.edp.proyectoTienda.domain.Category;
-import com.edp.proyectoTienda.domain.Product;
 import com.edp.proyectoTienda.domain.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,15 +24,14 @@ public class CategoryController {
     private CategoryService categoryService;
 
     @GetMapping("/category/all")
-    public List<Category> getAll(){
+    public List<Category> getAllCategory(){
         return categoryService.getAllCategory();
     }
+
     @PostMapping("/add/category")
     public ResponseEntity<Category> save(@RequestBody Category category) {
         Category savedCategory = categoryService.save(category);
-        return new ResponseEntity<>(savedCategory, HttpStatus.CREATED);
-    }
-
+        return new ResponseEntity<>(savedCategory, HttpStatus.CREATED);  }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteById(@PathVariable int id) {
@@ -48,6 +45,5 @@ public class CategoryController {
 
 
 
-    //get, create, update, delete
 
 }

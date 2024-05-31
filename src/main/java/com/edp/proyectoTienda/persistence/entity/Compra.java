@@ -82,8 +82,8 @@ public class Compra {
         return medioPago;
     }
 
-    public void setMedioPago(String medio_pago) {
-        this.medioPago = medio_pago;
+    public void setMedioPago(String medioPago) {
+        this.medioPago = medioPago;
     }
 
     public String getComentario() {

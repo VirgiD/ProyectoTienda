@@ -14,10 +14,8 @@ public interface ProductRepository {
     List<Product> findByCategory(int categoryId);
 
     void deleteById(int id);
-   List<Product>getScarceProduct(int productId);
-
-   void deleteByIdProduct(int id);
-
+    List<Product>getScarceProduct(int productId);
+    void deleteByIdProduct(int id);
     Product save (Product product);
 
 

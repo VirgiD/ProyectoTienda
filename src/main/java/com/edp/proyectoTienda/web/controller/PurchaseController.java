@@ -1,7 +1,7 @@
 package com.edp.proyectoTienda.web.controller;
 import com.edp.proyectoTienda.domain.Purchase;
 import com.edp.proyectoTienda.domain.service.PurchaseService;
-import org.apache.catalina.Service;
+import com.edp.proyectoTienda.persistence.entity.Compra;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -22,12 +23,17 @@ public class PurchaseController {
     private PurchaseService purchaseService;
 
     @GetMapping("/purchase/all")
-    public List<Purchase> getAll(){
-
-        return purchaseService.getAll();
+    public ResponseEntity<List<Purchase>> getAll() {
+        List<Purchase> purchases = purchaseService.getAll();
+        if (purchases.isEmpty()) {
+            return ResponseEntity.noContent().build();
+        } else {
+            return ResponseEntity.ok(purchases);
+        }
     }
 
-    @PostMapping("/add/compra")
+
+@PostMapping("/add/compra")
     public Purchase save(@RequestBody Purchase purchase){
         return purchaseService.save(purchase);
     }
@@ -37,4 +43,15 @@ public class PurchaseController {
         purchaseService.deleteById(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
+
+    @GetMapping("/byPaymentMethod")
+    public ResponseEntity<List<Purchase>> getByMedioPago(@RequestParam String paymentMethod) {
+        List<Purchase> purchases = purchaseService.findByMedioPago(paymentMethod);
+        if (purchases.isEmpty()) {
+            return ResponseEntity.noContent().build();
+        } else {
+            return ResponseEntity.ok(purchases);
+        }
+    }
 }
+

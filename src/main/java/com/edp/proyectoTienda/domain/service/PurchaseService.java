@@ -24,8 +24,8 @@ public class PurchaseService {
     public void deleteById(int id) {
         purchaseRespository.deleteByIdPurchase(id);
     }
-    public List<Purchase> findByPaymentsMethod(String paymentMethod){
-        return purchaseRespository.findByPaymentsMethod(paymentMethod);
+   public List<Purchase> findByMedioPago(String paymentMethod){
+        return purchaseRespository.findByMedioPago(paymentMethod);
     }
 
 }

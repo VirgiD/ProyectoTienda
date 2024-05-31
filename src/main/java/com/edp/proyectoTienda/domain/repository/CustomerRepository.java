@@ -13,4 +13,5 @@ public interface CustomerRepository {
 
     Customer save (Customer customer);
     Optional<Customer> findById(int id);
+    List<Customer> findByApellidoAndNombre(String apellido, String nombre);
 }

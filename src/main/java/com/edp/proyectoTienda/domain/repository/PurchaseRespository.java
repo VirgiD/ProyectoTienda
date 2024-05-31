@@ -9,6 +9,5 @@ public interface PurchaseRespository {
     Purchase save(Purchase purchase);
 
      void deleteByIdPurchase(int id);
-
-    List<Purchase> findByPaymentsMethod(String paymentMethod);
+    List<Purchase> findByMedioPago(String paymentMethod);
 }

@@ -48,4 +48,11 @@ public class ClienteRepository implements CustomerRepository {
     }
 
 
+    @Override
+    public List<Customer> findByApellidoAndNombre(String apellido, String nombre) {
+        List<Cliente> clientes = clienteCrudRepository.findByApellidoAndNombre(apellido, nombre);
+        return mapper.toCustomers(clientes);
+    }
+
+
 }

@@ -5,6 +5,7 @@ import com.edp.proyectoTienda.domain.repository.PurchaseRespository;
 import com.edp.proyectoTienda.persistence.Mappers.PurchaseMapper;
 import com.edp.proyectoTienda.persistence.crud.CompraCrudRepository;
 import com.edp.proyectoTienda.persistence.entity.Compra;
+import com.edp.proyectoTienda.persistence.entity.Producto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -14,9 +15,9 @@ import java.util.List;
 
 @Repository
 public class CompraRepository implements PurchaseRespository {
-@Autowired
+    @Autowired
     private CompraCrudRepository compraCrudRepository;
-@Autowired
+    @Autowired
     private PurchaseMapper mapper;
 
 
@@ -38,7 +39,9 @@ public class CompraRepository implements PurchaseRespository {
     }
 
     @Override
-    public List<Purchase> findByPaymentsMethod(String paymentMehtod) {
-        return mapper.toPurchases(compraCrudRepository.findByMedioPago(paymentMehtod));
+    public List<Purchase> findByMedioPago(String paymentMethod) {
+        List<Compra> compras = compraCrudRepository.findByMedioPago(paymentMethod);
+        return mapper.toPurchases(compras);
+
     }
 }

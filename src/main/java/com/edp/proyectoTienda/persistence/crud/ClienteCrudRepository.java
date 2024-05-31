@@ -1,4 +1,5 @@
 package com.edp.proyectoTienda.persistence.crud;
+import com.edp.proyectoTienda.domain.Customer;
 import com.edp.proyectoTienda.persistence.entity.Cliente;
 import org.springframework.data.repository.CrudRepository;
 

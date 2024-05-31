@@ -2,6 +2,7 @@ package com.edp.proyectoTienda.domain.service;
 
 import com.edp.proyectoTienda.domain.Customer;
 import com.edp.proyectoTienda.domain.repository.CustomerRepository;
+import com.edp.proyectoTienda.persistence.entity.Cliente;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -33,6 +34,10 @@ public class CustomerService {
 
     public Optional<Customer> findById(int id){
          return customerRepository.findById(id);
+    }
+
+    public List<Customer> findByApellidoAndNombre(String apellido, String nombre){
+        return  customerRepository.findByApellidoAndNombre(apellido,nombre);
     }
 
 
